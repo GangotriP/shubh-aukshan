@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#370e25" />
+  <meta name="description" content="प्रेम, संरक्षण आणि शक्तीचा एक छोटासा आभासी औक्षण सोहळा." />
+  <title>शुभ औक्षण · तुझ्यासाठी प्रेमाने</title>
+  <style>
+    :root{--wine:#3a1027;--wine2:#5d1c34;--pink:#eeaeb5;--cream:#fff1d5;--gold:#f6ce77;--goldDeep:#b67629;--muted:#f4d3c3;--line:rgba(255,221,159,.28);--shadow:rgba(15,0,12,.35)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:#260b1b;color:var(--cream);font-family:"Noto Sans Devanagari","Mukta","Mangal",system-ui,sans-serif;overflow-x:hidden}
+    button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.58}input{min-width:0}
+    .page{position:relative;isolation:isolate;min-height:100vh;background:radial-gradient(ellipse 65% 42% at 50% 34%,rgba(178,75,95,.27),transparent 80%),radial-gradient(ellipse 80% 70% at 50% 100%,rgba(90,21,42,.5),transparent 70%),linear-gradient(160deg,#390f27,#270d1d)}
+    .page::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.14;background-image:radial-gradient(#f5cb89 1px,transparent 1px);background-size:33px 33px;mask-image:linear-gradient(to bottom,black,transparent 80%);z-index:-1}
+    .topline{height:5px;background:linear-gradient(90deg,#7d382b,#f7dc9a 30%,#fff6ce 50%,#efc678 70%,#7d382b)}
+    .header{max-width:1100px;margin:0 auto;padding:24px 26px 8px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--cream);font-size:15px;letter-spacing:.025em;font-weight:700}.brand-mark{width:39px;height:39px;border:1px solid #e8b965;border-radius:50%;display:grid;place-items:center;color:#ffe4a1;font-size:21px;background:rgba(255,255,255,.045)}
+    .header-actions{display:flex;gap:8px}.ghost{background:rgba(255,238,193,.08);border:1px solid var(--line);border-radius:999px;color:#ffedcb;padding:10px 14px;font-size:13px;display:inline-flex;align-items:center;gap:7px}.ghost:hover{background:rgba(255,238,193,.15)}
+    .hero{text-align:center;padding:7px 18px 8px}.eyebrow{color:#eec087;font-size:12px;font-weight:700;letter-spacing:.17em;margin:0 0 10px;text-transform:uppercase}.hero h1{font-family:"Noto Serif Devanagari",serif;font-weight:700;font-size:clamp(32px,5.2vw,54px);margin:0 0 7px;line-height:1.35;color:#ffe6a7;text-shadow:0 2px 20px rgba(255,183,93,.2)}.hero p{margin:0 auto;max-width:650px;line-height:1.8;color:#f6d1ca;font-size:clamp(13px,1.7vw,16px)}
+    .main{max-width:1080px;margin:auto;padding:16px 24px 30px;display:grid;grid-template-columns:minmax(0,1.22fr) minmax(310px,.78fr);gap:28px;align-items:stretch}
+    .ritual-panel{border-radius:26px;border:1px solid rgba(255,215,145,.26);background:linear-gradient(155deg,rgba(155,58,75,.2),rgba(67,18,39,.35));box-shadow:0 22px 65px rgba(11,0,10,.28),inset 0 1px rgba(255,255,255,.08);overflow:hidden;position:relative}
+    .ritual-panel:before,.ritual-panel:after{content:"❖";position:absolute;z-index:2;color:rgba(248,200,129,.7);font-size:19px}.ritual-panel:before{top:17px;left:20px}.ritual-panel:after{top:17px;right:20px}
+    .scene{height:clamp(420px,45vw,530px);min-height:420px;position:relative;overflow:hidden;touch-action:pan-y;background:radial-gradient(ellipse at 50% 43%,rgba(237,168,132,.17),transparent 54%)}
+    .arch{position:absolute;width:70%;height:80%;left:15%;top:6%;border:1.2px solid rgba(240,190,107,.32);border-radius:50% 50% 43% 43% / 43% 43% 14% 14%;box-shadow:0 0 0 7px rgba(255,221,150,.025),0 0 0 13px rgba(255,221,150,.022),inset 0 0 50px rgba(252,186,112,.025)}.arch:after{content:"✦";position:absolute;top:-12px;left:calc(50% - 12px);font-size:24px;color:var(--gold)}
+    .lotus{position:absolute;top:9%;left:50%;transform:translateX(-50%);color:rgba(255,211,129,.7);font-size:16px;letter-spacing:7px}
+    .figure{position:absolute;left:50%;top:9%;transform:translateX(-50%);width:min(55%,300px);height:63%;min-width:215px;filter:drop-shadow(0 15px 30px rgba(11,1,10,.28));transition:filter .4s}
+    .figure svg{width:100%;height:100%;overflow:visible}.tilak{opacity:0;transition:opacity .5s}.rice-on-head{opacity:0;transition:opacity .5s}.figure.kumkum-done .tilak{opacity:1}.figure.akshata-done .rice-on-head{opacity:1}
+    .halo{position:absolute;left:50%;top:13%;width:165px;height:165px;border:1px dashed rgba(250,194,109,.22);border-radius:50%;transform:translateX(-50%);animation:halospin 50s linear infinite;pointer-events:none}@keyframes halospin{to{transform:translateX(-50%) rotate(360deg)}}
+    .thali{position:absolute;left:50%;top:76%;width:min(83%,420px);aspect-ratio:1.32;transform:translate(-50%,-50%);z-index:4;filter:drop-shadow(0 21px 26px rgba(14,0,9,.52));will-change:transform;touch-action:none;user-select:none}.thali svg{width:100%;height:100%;display:block;overflow:visible}.object{cursor:pointer;transition:filter .2s,opacity .2s;outline:none}.object:hover,.object:focus{filter:drop-shadow(0 0 11px #ffe2a9)}.object.highlight{filter:drop-shadow(0 0 12px #ffe5a1) drop-shadow(0 0 5px #fff0bb);animation:glimmer 1.5s ease-in-out infinite}@keyframes glimmer{50%{opacity:.8}}.lamp-flame{transform-box:fill-box;transform-origin:center bottom;animation:flicker .86s ease-in-out infinite alternate}.lamp-flame.right{animation-delay:-.43s}@keyframes flicker{0%{transform:rotate(-5deg) scale(.94,1.03)}100%{transform:rotate(5deg) scale(1.06,.93)}}
+    .ritual-caption{font-size:11px;text-align:center;color:#ddb69c;padding:0 15px 13px;letter-spacing:.02em;position:relative;z-index:5}
+    .effects{position:absolute;inset:0;pointer-events:none;z-index:6;overflow:hidden}.sparkle{position:absolute;color:#ffdf8b;text-shadow:0 0 13px #ffbe4e;animation:spark .95s ease-out forwards;font-size:20px}@keyframes spark{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}25%{opacity:1}100%{opacity:0;transform:translate(-50%,-110px) scale(1.25)}}
+    .ring-ritual{position:absolute;z-index:9;left:0;top:0;opacity:0;pointer-events:none;filter:drop-shadow(0 4px 7px rgba(39,4,18,.58))}
+    .instructions{padding:27px 26px 25px;display:flex;flex-direction:column;gap:19px;background:linear-gradient(155deg,rgba(255,246,219,.075),rgba(255,246,219,.025));border:1px solid var(--line);border-radius:26px;box-shadow:inset 0 1px rgba(255,255,255,.06);min-height:100%}
+    .progress{display:flex;gap:7px;align-items:center}.progress span{display:block;flex:1;height:4px;border-radius:10px;background:rgba(255,221,164,.18);transition:background .3s}.progress span.done{background:linear-gradient(90deg,#d9944f,#ffdf8b)}
+    .step-label{font-size:12px;letter-spacing:.08em;color:#ecc087;font-weight:700;margin:0}.step-title{font-family:"Noto Serif Devanagari",serif;font-size:clamp(24px,2.4vw,30px);line-height:1.5;margin:3px 0 0;color:#ffe4ac}.step-copy{margin:0;line-height:1.9;color:#f3d5cc;font-size:14px;min-height:75px}.divider{height:1px;background:var(--line)}
+    .small-caption{font-size:12px;color:#dbb49b;line-height:1.65}
+    .primary{background:linear-gradient(110deg,#c88d40,#fce0a2 48%,#dfaa58);color:#461625;border:0;border-radius:15px;padding:16px 20px;font-size:15px;font-weight:800;box-shadow:0 7px 25px rgba(223,155,79,.22);width:100%;transition:transform .15s,filter .15s}.primary:hover{filter:brightness(1.055)}.primary:active{transform:scale(.985)}
+    .secondary{width:100%;border:1px solid rgba(255,218,162,.35);background:rgba(255,232,186,.08);border-radius:14px;padding:13px;color:#ffdcaa;font-size:13px}.secondary:hover{background:rgba(255,232,186,.16)}
+    .buttons{margin-top:auto;display:flex;flex-direction:column;gap:10px}.blessing{border-left:2px solid #c9905a;padding:2px 0 2px 14px;color:#ffe2bd;line-height:2;font-family:"Noto Serif Devanagari",serif;font-size:16px}.blessing p{margin:0}.step-illustration{display:flex;gap:7px;align-items:center;color:#dfb18f;font-size:12px}
+    .note{max-width:1050px;margin:0 auto;padding:0 25px 34px;color:#c6a29e;font-size:11px;text-align:center;line-height:1.8}.note strong{color:#dec1ae}
+    .modal{position:fixed;inset:0;background:rgba(21,5,17,.78);z-index:40;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(5px)}.modal.open{display:flex}.modal-card{position:relative;width:min(100%,490px);border:1px solid rgba(255,226,163,.45);border-radius:22px;background:linear-gradient(150deg,#67243e,#391426);padding:29px 27px;box-shadow:0 40px 75px #15020ed9;max-height:90vh;overflow:auto}.modal-card h2{font-family:"Noto Serif Devanagari",serif;color:#ffe0a3;font-size:27px;margin:2px 0 8px}.modal-card p{font-size:13px;line-height:1.85;color:#f5d0c5}.modal-card label{display:block;color:#ffdbb6;font-size:13px;margin:18px 0 7px}.modal-card input{width:100%;border:1px solid #aa6c63;border-radius:11px;background:#270e20;color:#fff0d4;padding:12px 13px;font-size:15px;outline:none}.modal-card input:focus{border-color:#fbd794}.modal-card input::placeholder{color:#ac8792}.close{position:absolute;right:17px;top:12px;background:none;border:none;color:#ffe4c5;font-size:27px;line-height:1}.share-actions{margin-top:22px;display:flex;gap:10px}.share-actions button{flex:1}.status{font-size:12px;color:#ffddaa;min-height:24px;line-height:1.6;padding-top:9px}.only-mobile{display:none}
+    .completion{display:none;text-align:center}.completion.show{display:block}.complete-symbol{font-size:43px;color:#ffd58a;line-height:1.1;margin:0 0 10px;animation:pop .8s ease}@keyframes pop{from{transform:scale(.6);opacity:.1}to{transform:scale(1);opacity:1}}.completion h2{font-family:"Noto Serif Devanagari",serif;font-size:28px;color:#ffdfab;margin:0 0 10px}.completion .poem{font-family:"Noto Serif Devanagari",serif;font-size:16px;line-height:2.05;color:#ffe1cc;margin:0 0 18px}
+    .fromline{color:#e3b3a2;font-size:12px}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:760px){.header{padding:19px 17px 7px}.brand{font-size:14px}.header-actions .ghost{padding:9px 11px}.hero{padding:18px 15px 10px}.hero h1{font-size:36px}.hero p{font-size:13px}.main{display:flex;flex-direction:column;gap:13px;padding:8px 13px 18px}.ritual-panel,.instructions{border-radius:20px}.scene{height:455px}.instructions{padding:20px 20px 21px;gap:12px;min-height:0}.step-copy{min-height:auto}.buttons{margin-top:0}.thali{width:min(83%,385px)}.figure{top:10%;width:245px;height:63%}.arch{width:84%;left:8%}.note{padding:0 19px 25px}.only-mobile{display:inline}}
+    @media(max-width:390px){.scene{height:398px;min-height:390px}.figure{width:210px}.thali{width:86%}.hero h1{font-size:32px}.header .brand span:last-child{font-size:12px}.header .brand span:last-child span{display:none}.header-actions .ghost{white-space:nowrap;font-size:11px;padding:9px 10px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* Ceremonial redesign: accept blessings first, then one explicit step at a time. */
+    :root{--portrait:url("data:image/webp;base64,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")}
+    [hidden],.main[hidden],.welcome[hidden]{display:none!important}
+    .welcome{max-width:1040px;margin:20px auto 48px;padding:26px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:24px;border-radius:29px;border:1px solid rgba(249,209,154,.38);background:linear-gradient(143deg,rgba(115,39,60,.65),rgba(57,15,38,.85));box-shadow:0 25px 75px rgba(12,0,7,.37)}
+    .welcome-message{padding:17px 14px 12px 17px}
+    .welcome h2{color:#ffe4ad;font-family:"Noto Serif Devanagari",serif;font-size:clamp(29px,3.6vw,42px);line-height:1.45;margin:2px 0 15px}
+    .welcome-message>p:not(.eyebrow){line-height:1.88;color:#f8d8c8;font-size:15px;margin:10px 0}.welcome-message strong{color:#ffe6b6}
+    .welcome-blessing{border:1px solid rgba(249,204,136,.33);border-radius:17px;background:rgba(28,3,22,.36);padding:17px 21px;margin:20px 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+    .blessing-heading{text-align:center;color:#f4c27c;font-size:13px;font-weight:750;letter-spacing:.02em}
+    .welcome-blessing p{color:#ffe7c7;font-family:"Noto Serif Devanagari",serif;text-align:center;font-size:clamp(15px,1.9vw,19px);line-height:2.04;margin:9px 0 0}
+    .welcome-message .accept-copy{color:#ffdda8!important;font-weight:700;margin-top:15px!important}
+    .welcome-accept{max-width:490px}.welcome-message .welcome-hint{font-size:12px!important;color:#dfb9ae!important;margin-top:10px!important}
+    .welcome-art{position:relative;min-height:475px;border-radius:21px;background:radial-gradient(ellipse at 50% 44%,rgba(229,176,112,.36),transparent 57%),linear-gradient(165deg,#75404d,#472139);border:1px solid rgba(255,226,163,.22);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+    .welcome-art:before{content:"✧ ✦ ✧";position:absolute;top:20px;font-size:21px;color:#f9d69f;letter-spacing:13px;opacity:.8}
+    .welcome-art-portrait{position:absolute;top:58px;width:94%;height:calc(100% - 81px);background-image:var(--portrait);background-size:contain;background-repeat:no-repeat;background-position:center bottom;mask-image:linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%)}
+    .customize{max-width:1040px;margin:18px auto 40px;padding:22px;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(280px,.96fr);gap:24px;border-radius:28px;border:1px solid rgba(249,209,154,.32);background:linear-gradient(143deg,rgba(115,39,60,.56),rgba(57,15,38,.82));box-shadow:0 25px 75px rgba(12,0,7,.33)}
+    .customize-copy{padding:16px 12px 8px 14px}.customize-copy h2{color:#ffe4ad;font-family:"Noto Serif Devanagari",serif;font-size:clamp(27px,3.2vw,39px);line-height:1.46;margin:4px 0 13px}.customize-copy p{line-height:1.85;color:#f7d8ca;font-size:14px;margin:10px 0}
+    .privacy-note{font-size:12px!important;color:#dfb9ae!important}
+    .photo-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.photo-actions .secondary,.photo-actions .primary{width:auto;flex:1 1 180px}
+    /* Direct native file-input targets are more dependable on mobile than calling input.click(). */
+    .photo-picker{position:relative;display:flex;align-items:center;justify-content:center;min-height:52px;cursor:pointer;text-align:center;flex:1 1 180px;overflow:hidden}
+    .photo-picker .file-input{position:absolute;inset:0;width:100%;height:100%;font-size:60px;opacity:0;cursor:pointer;z-index:2}
+    .photo-picker:focus-within{outline:2px solid #ffe2a5;outline-offset:3px}
+    .photo-preview.has-photo::before{opacity:0}
+    .photo-preview .chosen-preview{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center}
+    .photo-preview .chosen-preview[hidden]{display:none}
+    .upload-status[role="status"]{display:block}
+    .customize-card{border:1px solid rgba(255,221,164,.22);border-radius:21px;background:rgba(28,3,22,.28);padding:16px;display:flex;flex-direction:column;gap:14px;min-height:100%}
+    .photo-preview{position:relative;min-height:390px;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse at 50% 35%,rgba(239,186,124,.28),transparent 58%),linear-gradient(165deg,#6d3b4a,#422036);border:1px solid rgba(255,226,163,.18)}
+    .photo-preview::before{content:"";position:absolute;inset:18px 18px 0 18px;background-image:var(--portrait);background-size:contain;background-repeat:no-repeat;background-position:center bottom;mask-image:linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%)}
+    .photo-preview::after{content:"तुझ्या फोटोसह वैयक्तिक औक्षण ✨";position:absolute;left:0;right:0;bottom:0;padding:14px 10px 16px;background:linear-gradient(90deg,transparent,rgba(39,10,26,.88),transparent);text-align:center;color:#ffe3aa;font-family:"Noto Serif Devanagari",serif;font-size:16px}
+    .upload-status{min-height:24px;font-size:12px;color:#ffddb0;line-height:1.6}
+    .art-line{z-index:2;background:linear-gradient(90deg,transparent,rgba(39,10,26,.85),transparent);padding:15px 8px 17px;width:100%;text-align:center;color:#ffe2a8;font-family:"Noto Serif Devanagari",serif;font-size:17px}
+    .figure{top:10%;width:min(58%,285px);min-width:208px;height:auto;aspect-ratio:300/352;filter:drop-shadow(0 16px 30px rgba(20,3,17,.28))}
+    .figure-photo{position:absolute;inset:0;background-image:var(--portrait);background-size:cover;background-position:center;border-radius:45% 45% 22% 22% / 20% 20% 17% 17%;mask-image:radial-gradient(ellipse 64% 62% at 50% 45%,#000 62%,transparent 100%);transform:translateY(var(--photo-shift,0px)) scale(var(--photo-zoom,1));transform-origin:center center}
+    .forehead-dot{position:absolute;left:var(--forehead-x,48.4%);border-radius:50%;z-index:3;opacity:0;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 1px rgba(252,222,176,.15)}
+    .dot-kumkum{top:calc(var(--forehead-y,26.3%) - 2.5%);width:9px;height:9px;background:radial-gradient(circle at 35% 30%,#ec3d5a,#98102b 79%)}
+    .dot-haldi{top:calc(var(--forehead-y,26.3%) + 2.5%);width:10px;height:10px;background:radial-gradient(circle at 38% 30%,#ffe65e,#daa421 75%)}
+    .figure.haldi-done .dot-haldi,.figure.kumkum-done .dot-kumkum{opacity:1;transform:translate(-50%,-50%) scale(1);transition:opacity .6s,transform .6s cubic-bezier(.21,1.4,.36,1)}
+    .rice-on-crown{position:absolute;inset:0;z-index:3;pointer-events:none}
+    /* A personal photo can frame the face anywhere; the recipient places both ritual marks. */
+    .scene.calibrating .thali{opacity:.16;pointer-events:none;transition:opacity .25s}
+    .scene.calibrating .figure{cursor:crosshair;touch-action:manipulation}
+    .scene.calibrating .figure-photo{mask-image:none;border-radius:19px;box-shadow:0 0 0 2px rgba(255,220,145,.5);overflow:hidden}
+    .placement-pin{position:absolute;z-index:11;transform:translate(-50%,-50%);width:23px;height:23px;border-radius:50%;border:3px solid #fff0c1;background:#9e2948;box-shadow:0 0 0 5px rgba(62,10,35,.52),0 0 13px rgba(255,214,152,.65);pointer-events:none;display:none}
+    .placement-pin::after{content:attr(data-label);position:absolute;left:50%;bottom:30px;transform:translateX(-50%);color:#fff4d2;background:rgba(68,17,40,.92);border:1px solid #e3ae6d;border-radius:12px;white-space:nowrap;font-size:12px;font-weight:750;padding:4px 8px}
+    .placement-pin.crown{background:#e9ae41}
+    .scene.calibrating .placement-pin.placed{display:block}
+    .placement-in-scene{position:absolute;z-index:12;left:6%;right:6%;bottom:11px;text-align:center;background:rgba(56,14,36,.94);border:1px solid rgba(255,227,157,.58);color:#ffeac5;padding:9px 10px;border-radius:13px;font-size:13px;line-height:1.5;display:none;pointer-events:none}
+    .scene.calibrating .placement-in-scene{display:block}
+    .calibration-controls{display:flex;flex-direction:column;gap:10px}
+    .calibration-controls button{width:100%}
+    .calibration-controls button.selected{background:rgba(255,209,122,.21);border-color:#ffdf9a}
+    .calibration-controls label{font-size:12px;color:#f4d5bf;display:flex;justify-content:space-between;gap:12px}
+    .calibration-controls input[type=range]{width:100%;accent-color:#efc16d;min-height:22px}
+    .calibration-controls .hint{font-size:12px;line-height:1.65;color:#eac5b0}
+
+    .rice-grain{position:absolute;left:calc(var(--crown-x,50%) + var(--dx));top:calc(var(--crown-y,4%) + var(--dy));width:5.8px;height:2.4px;background:#fef6dd;border-radius:100%;border:0.3px solid #bfa887;opacity:0;transform:translateY(-48px) rotate(var(--r));filter:drop-shadow(0 1px 1px #33201a)}
+    .figure.akshata-done .rice-grain{animation:grainfall .8s var(--d) cubic-bezier(.26,.72,.32,1) both;opacity:1}
+    @keyframes grainfall{0%{opacity:0;transform:translateY(-60px) rotate(calc(var(--r) + 95deg))}38%{opacity:1}80%{transform:translateY(1px) rotate(calc(var(--r) - 5deg))}100%{opacity:1;transform:translateY(0) rotate(var(--r))}}
+    .step-map{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+    .step-map span{border:1px solid rgba(255,226,166,.15);border-radius:11px;padding:9px 8px;text-align:center;color:#e0baaa;background:rgba(255,244,215,.035);font-size:11px;line-height:1.5}
+    .step-map span.active{border-color:#f6d48e;color:#fff3d2;background:rgba(250,205,127,.17);font-weight:750}
+    .step-map span.done{color:#f4d6a5;border-color:rgba(246,210,142,.3)}
+    .ring-ritual{left:0;top:0;width:76px;height:56px;transform-origin:38px 28px;opacity:0;z-index:9}
+    .ring-ritual svg{width:100%;height:100%;display:block}
+    .ring-ritual.play{opacity:1;animation:none}
+    .arc-guide{position:absolute;inset:0;pointer-events:none;z-index:5;opacity:0;transition:opacity .4s}
+    .arc-guide.visible{opacity:.95}
+    .arc-guide svg{width:100%;height:100%;overflow:visible}
+    .arc-guide path{fill:none;stroke:rgba(255,233,169,.86);stroke-width:2.8;stroke-dasharray:7 7;stroke-linecap:round}
+    .arc-guide circle{fill:#f7d584;stroke:#63381e;stroke-width:1.5}
+    .arc-guide text{fill:#fff1cd;font-size:14px;font-family:"Noto Sans Devanagari",sans-serif;font-weight:700;paint-order:stroke;stroke:#4d172c;stroke-width:3px}
+    .scene{touch-action:pan-y}
+    .thali{touch-action:pan-y}
+    .step-copy{min-height:95px}
+    .instructions{gap:13px}
+    .main.celebrated{animation:ceremonyReveal .55s ease both}
+    @keyframes ceremonyReveal{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:760px){
+      .welcome{margin:9px 12px 24px;padding:13px;display:flex;flex-direction:column-reverse;gap:4px;border-radius:21px}
+      .welcome-art{min-height:165px;max-height:165px}.welcome-art:before{top:8px}
+      .welcome-art-portrait{width:172px;height:200px;top:-12px;mask-image:linear-gradient(to bottom,black 0%,black 67%,transparent 90%)}
+      .art-line{font-size:13px;padding:9px;line-height:1.3}
+      .welcome-message{padding:12px 10px 8px}.welcome h2{font-size:29px;margin:4px 0 9px}.welcome-message>p:not(.eyebrow){font-size:13px;line-height:1.82}
+      .welcome-blessing{margin:14px 0;padding:14px}.welcome-blessing p{font-size:15px;line-height:1.88}
+      .main .instructions{order:-1;gap:9px;padding:16px}.step-copy{min-height:0}.step-map{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}.step-map span{font-size:9px;padding:6px 3px}
+      .figure{top:10%;width:270px;min-width:0}.scene{height:445px}.thali{top:77%}
+      .step-title{font-size:23px}.step-copy{font-size:13px;line-height:1.65}
+    }
+    @media(max-width:760px){.customize{margin:8px 12px 24px;padding:13px;display:flex;flex-direction:column-reverse;gap:10px;border-radius:21px}.photo-preview{min-height:220px}.customize-copy{padding:10px 8px 6px}.customize-copy h2{font-size:27px}}
+    @media(max-width:390px){.figure{width:230px}.scene{height:405px}.welcome-art{min-height:140px;max-height:140px}.welcome-message{padding:10px 7px}}
+    @media(prefers-reduced-motion:reduce){.figure.akshata-done .rice-grain{animation:none;opacity:1;transform:rotate(var(--r))}}
+
+  </style>
+</head>
+<body>
+ <div class="page">
+  <div class="topline"></div>
+  <header class="header">
+   <a href="./" class="brand" aria-label="शुभ औक्षण - सुरुवातीपासून"><span class="brand-mark">ॐ</span><span>शुभ औक्षण <span style="color:#d6a98b;font-weight:400">· एक प्रेमळ आशीर्वाद</span></span></a>
+   <div class="header-actions"><button class="ghost" id="soundBtn" type="button" aria-label="घंटानाद सुरू किंवा बंद करा">♫ <span id="soundLabel">ध्वनी बंद</span></button><button class="ghost" type="button" id="openShare">♡ शेअर करा</button></div>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">प्रेम • संरक्षण • शक्ती</div>
+    <h1 id="heroTitle">तुझ्यासाठी प्रेमाने औक्षण</h1>
+    <p id="heroSub">नकारात्मक नजरेपासून संरक्षणाची प्रार्थना आणि तुझ्यातील शक्तीला मनापासून वंदन.</p>
+  </section>
+  <section class="welcome" id="welcome" aria-labelledby="welcomeTitle">
+    <div class="welcome-message">
+      <p class="eyebrow">पाडव्याच्या निमित्ताने · खास तुझ्यासाठी</p>
+      <h2 id="welcomeTitle">तुझं औक्षण कोण करणार?</h2>
+      <p>पाडव्याला आपण अनेकदा आपल्या प्रियजनांचं औक्षण करतो. पण आपल्या स्वतःच्या आनंदासाठी, धैर्यासाठी आणि तेजासाठी ताम्हण कोण फिरवतं?</p>
+      <p>तूही औक्षणाची, प्रेमाची आणि शुभाशीर्वादांची तितकीच मानकरी आहेस. म्हणून हे <strong>आभासी औक्षण खास तुझ्यासाठी</strong> — तुझ्या कर्तृत्वाला, तुझ्या अस्तित्वाला आणि तुझ्यातल्या शक्तीला वंदन.</p>
+      <div class="welcome-blessing" aria-label="तुझ्यासाठी शुभेच्छा">
+        <div class="blessing-heading">♡ तुझ्यासाठी मनापासून शुभेच्छा ♡</div>
+        <p>दृष्ट न लागो तुझ्या सुखाला,<br>बळ लाभो तुझ्या प्रत्येक पावलाला.<br>तेज, धैर्य, आनंद आणि शक्ती —<br>सदैव तुझ्या सोबतीला.</p>
+      </div>
+      <p class="accept-copy">या शुभेच्छा मनापासून स्वीकारशील का?</p>
+      <button class="primary welcome-accept" type="button" id="acceptBlessing">♡ हो, मी हे आशीर्वाद स्वीकारते</button>
+      <p class="welcome-hint">स्वीकारल्यानंतर आधी फोटो निवडण्याचा पर्याय, आणि मग तुझं औक्षण टप्प्याटप्प्याने सुरू होईल.</p>
+    </div>
+    <div class="welcome-art" aria-hidden="true"><div class="welcome-art-portrait"></div><span class="art-line">तूही या प्रेमाची मानकरी आहेस ✨</span></div>
+  </section>
+  <section class="customize" id="customize" hidden aria-labelledby="customizeTitle">
+    <div class="customize-copy">
+      <p class="eyebrow">ऐच्छिक वैयक्तिक स्पर्श</p>
+      <h2 id="customizeTitle">तुझ्या फोटोसह औक्षण करायचं का?</h2>
+      <p>इच्छा असल्यास तू इथे स्वतःचा फोटो <strong>कॅमेऱ्यातून काढू</strong> शकतेस किंवा <strong>फोनमधून अपलोड</strong> करू शकतेस. मग पुढचं औक्षण त्या फोटोवर होईल.</p>
+      <p class="privacy-note">हा फोटो कुठेही अपलोड होत नाही. तो फक्त तुझ्या या ब्राउझरमध्ये, या अनुभवासाठी वापरला जातो.</p>
+      <div class="photo-actions">
+        <label class="secondary photo-picker" id="takePhotoBtn">📷 फोटो काढा
+          <input class="file-input" id="cameraInput" type="file" accept="image/*" capture="user" aria-label="कॅमेऱ्यातून फोटो काढा" />
+        </label>
+        <label class="secondary photo-picker" id="uploadPhotoBtn">🖼️ फोटो अपलोड करा
+          <input class="file-input" id="uploadInput" type="file" accept="image/*" aria-label="डिव्हाइसमधून फोटो निवडा" />
+        </label>
+      </div>
+      <div class="upload-status" id="uploadStatus" role="status" aria-live="polite">डिफॉल्ट प्रतिमेसहही तू पुढे जाऊ शकतेस.</div>
+      <div class="photo-actions">
+        <button class="primary" type="button" id="continueWithPhoto" disabled>हा फोटो वापरा आणि औक्षण सुरू करा →</button>
+        <button class="secondary" type="button" id="skipPhotoBtn">डिफॉल्ट प्रतिमा वापरा</button>
+      </div>
+    </div>
+    <div class="customize-card" aria-hidden="true">
+      <div class="photo-preview" id="photoPreview"><img class="chosen-preview" id="chosenPreview" alt="निवडलेल्या फोटोचे पूर्वावलोकन" hidden /></div>
+    </div>
+  </section>
+  <main class="main" id="ceremony" hidden>
+   <section class="ritual-panel" aria-label="आभासी औक्षण दृश्य">
+    <div class="scene" id="scene">
+      <div class="arch" aria-hidden="true"></div><div class="halo" aria-hidden="true"></div>
+      <div class="lotus" aria-hidden="true">✦ ✧ ✦</div>
+      <div class="figure" id="figure" aria-label="औक्षण स्वीकारणारी स्त्री">
+        <div class="figure-photo" aria-hidden="true"></div>
+        <span class="placement-pin forehead" id="foreheadPin" data-label="कपाळ" aria-hidden="true"></span>
+        <span class="placement-pin crown" id="crownPin" data-label="शिखर" aria-hidden="true"></span>
+        <span class="forehead-dot dot-haldi" aria-hidden="true"></span>
+        <span class="forehead-dot dot-kumkum" aria-hidden="true"></span>
+        <div class="rice-on-crown" aria-hidden="true">
+          <i class="rice-grain" style="--dx:-11%;--dy:-0.8%;--r:-18deg;--d:0ms"></i>
+          <i class="rice-grain" style="--dx:-7%;--dy:-1.6%;--r:32deg;--d:75ms"></i>
+          <i class="rice-grain" style="--dx:-4%;--dy:0.1%;--r:-28deg;--d:150ms"></i>
+          <i class="rice-grain" style="--dx:-1%;--dy:-1.2%;--r:7deg;--d:225ms"></i>
+          <i class="rice-grain" style="--dx:2%;--dy:0.4%;--r:36deg;--d:300ms"></i>
+          <i class="rice-grain" style="--dx:5%;--dy:-1.4%;--r:-25deg;--d:375ms"></i>
+          <i class="rice-grain" style="--dx:8%;--dy:-0.4%;--r:12deg;--d:450ms"></i>
+          <i class="rice-grain" style="--dx:11%;--dy:1.1%;--r:-14deg;--d:525ms"></i>
+          <i class="rice-grain" style="--dx:-14%;--dy:1.3%;--r:30deg;--d:600ms"></i>
+          <i class="rice-grain" style="--dx:14%;--dy:1.7%;--r:15deg;--d:675ms"></i>
+          <i class="rice-grain" style="--dx:-6%;--dy:2.2%;--r:-11deg;--d:750ms"></i>
+          <i class="rice-grain" style="--dx:1%;--dy:2.4%;--r:29deg;--d:825ms"></i>
+          <i class="rice-grain" style="--dx:6%;--dy:1.6%;--r:-38deg;--d:900ms"></i>
+          <i class="rice-grain" style="--dx:-3%;--dy:-2.2%;--r:18deg;--d:975ms"></i>
+        </div>
+      </div>
+      <div class="placement-in-scene" id="placementPrompt" aria-live="polite">फोटोवर कपाळाच्या मध्यभागी स्पर्श करा</div>
+      <div class="arc-guide" id="arcGuide" aria-hidden="true">
+        <svg id="arcSvg" viewBox="0 0 400 450" preserveAspectRatio="none"><path id="arcPath" d="M60 325 Q200 140 340 325"/><circle id="arcLeft" cx="60" cy="325" r="6"/><circle id="arcRight" cx="340" cy="325" r="6"/><text id="arcLeftText" x="45" y="357">डावे</text><text id="arcRightText" x="325" y="357">उजवे</text></svg>
+      </div>
+      <!-- Only the traditional objects move. No hand or wrist artwork. -->
+      <div class="ring-ritual" id="ringRitual" aria-hidden="true">
+        <svg viewBox="0 0 76 56" width="76" height="56" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mobileRingGold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff5bd"/><stop offset=".36" stop-color="#eab958"/><stop offset=".72" stop-color="#b77628"/><stop offset="1" stop-color="#ffe9a0"/></linearGradient>
+            <linearGradient id="mobileNutBrown" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dc9560"/><stop offset=".52" stop-color="#9c5532"/><stop offset="1" stop-color="#6f3322"/></linearGradient>
+          </defs>
+          <!-- A gold ring resting right beside the सुपारी. -->
+          <ellipse cx="25" cy="31" rx="17" ry="12" transform="rotate(-24 25 31)" fill="none" stroke="#734019" stroke-width="8"/>
+          <ellipse cx="25" cy="29.5" rx="17" ry="12" transform="rotate(-24 25 29.5)" fill="none" stroke="url(#mobileRingGold)" stroke-width="7"/>
+          <ellipse cx="25" cy="29.5" rx="17" ry="12" transform="rotate(-24 25 29.5)" fill="none" stroke="#fff4be" stroke-width="1.6"/>
+          <path d="M35 10 L41 5 L47 11 L41 17 Z" fill="#fff4bf" stroke="#b7823b" stroke-width="1.5"/>
+          <!-- Supारी kept close to the ring; tiny strokes convey the real nut's ridges. -->
+          <ellipse cx="55" cy="27" rx="13" ry="19" transform="rotate(26 55 27)" fill="url(#mobileNutBrown)" stroke="#f1bb82" stroke-width="2"/>
+          <path d="M50 10 Q56 27 46 43 M59 10 Q63 27 55 44 M66 16 Q68 30 61 40" stroke="#e3a46b" stroke-width="1.7" fill="none" opacity=".8"/>
+          <path d="M50 13 Q45 25 50 39" stroke="#70402b" stroke-width="1.2" fill="none" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="thali" id="thali" aria-label="ताम्हण: दोन दिवे, हळद, कुंकू, अक्षता, सोन्याची अंगठी आणि सुपारी" role="group">
+        <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
+         <defs><radialGradient id="metal"><stop offset="0" stop-color="#fff4ba"/><stop offset=".45" stop-color="#daac59"/><stop offset=".78" stop-color="#c58a3b"/><stop offset=".9" stop-color="#f7d67d"/><stop offset="1" stop-color="#a6652a"/></radialGradient><linearGradient id="bronze" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a7"/><stop offset=".44" stop-color="#c88a38"/><stop offset=".8" stop-color="#8b4a24"/><stop offset="1" stop-color="#f2cb74"/></linearGradient><radialGradient id="bowl"><stop stop-color="#956226"/><stop offset=".72" stop-color="#b77a33"/><stop offset="1" stop-color="#ffe7a2"/></radialGradient><radialGradient id="light"><stop stop-color="#fffce0"/><stop offset=".38" stop-color="#ffe9a7"/><stop offset=".85" stop-color="#ff983c"/><stop offset="1" stop-color="#de4c20"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="8"/></filter></defs>
+         <ellipse cx="305" cy="239" rx="286" ry="163" fill="#15080c" opacity=".5" transform="translate(0 12)"/>
+         <ellipse cx="300" cy="221" rx="280" ry="166" fill="url(#metal)" stroke="#ffe6a0" stroke-width="5"/>
+         <ellipse cx="300" cy="221" rx="266" ry="152" fill="none" stroke="#89511f" stroke-width="8" opacity=".75"/>
+         <ellipse cx="300" cy="221" rx="250" ry="136" fill="none" stroke="#fff3be" stroke-width="2" opacity=".75"/>
+         <ellipse cx="300" cy="221" rx="240" ry="126" fill="rgba(117,58,14,.09)" stroke="#af7133" stroke-width="2"/>
+         <g opacity=".3" stroke="#ab6727" fill="none"><ellipse cx="300" cy="221" rx="211" ry="107"/><ellipse cx="300" cy="221" rx="172" ry="85"/><path d="M113 248 Q300 168 488 248"/><path d="M105 207 Q300 290 495 207"/></g>
+         <!-- Two lit oil lamps -->
+         <g class="object" data-object="lamps" role="button" tabindex="0" aria-label="दोन दिवे">
+          <g transform="translate(210 157)">
+           <ellipse cx="0" cy="28" rx="59" ry="27" fill="#915b24"/><path d="M-56 27 Q-32 56 0 51 Q36 56 56 27Q32 36 0 36 Q-34 35-56 27Z" fill="url(#bronze)" stroke="#ffdf88" stroke-width="3"/><ellipse cx="0" cy="25" rx="50" ry="16" fill="#a4692d" stroke="#ffdda1" stroke-width="3"/><ellipse cx="0" cy="21" rx="43" ry="12" fill="#cb8d35"/><path d="M-8 18 Q-12 -1 -6 -18 Q0 -46 6 -19 Q13 -1 6 18Z" fill="#ffab30" opacity=".75" filter="url(#glow)"/><path class="lamp-flame" d="M0 19 C-15 -2 -6 -20 0 -45 C11 -23 17 -3 0 19Z" fill="url(#light)"/><path d="M0 11 Q-6 -4 0 -20 Q8 -3 0 11Z" fill="#fff9cf"/></g>
+          <g transform="translate(388 158)">
+           <ellipse cx="0" cy="28" rx="59" ry="27" fill="#915b24"/><path d="M-56 27 Q-32 56 0 51 Q36 56 56 27Q32 36 0 36 Q-34 35-56 27Z" fill="url(#bronze)" stroke="#ffdf88" stroke-width="3"/><ellipse cx="0" cy="25" rx="50" ry="16" fill="#a4692d" stroke="#ffdda1" stroke-width="3"/><ellipse cx="0" cy="21" rx="43" ry="12" fill="#cb8d35"/><path d="M-8 18 Q-12 -1 -6 -18 Q0 -46 6 -19 Q13 -1 6 18Z" fill="#ffab30" opacity=".75" filter="url(#glow)"/><path class="lamp-flame right" d="M0 19 C-15 -2 -6 -20 0 -45 C11 -23 17 -3 0 19Z" fill="url(#light)"/><path d="M0 11 Q-6 -4 0 -20 Q8 -3 0 11Z" fill="#fff9cf"/></g>
+         </g>
+         <!-- Haldi -->
+         <g class="object" data-object="haldi" role="button" tabindex="0" aria-label="हळद">
+          <ellipse cx="154" cy="269" rx="58" ry="29" fill="url(#bowl)" stroke="#ffdda2" stroke-width="4"/><ellipse cx="154" cy="264" rx="47" ry="20" fill="#eab632"/><path d="M112 264 Q150 240 194 265 Q157 279 112 264Z" fill="#fbd253" opacity=".88"/><ellipse cx="154" cy="265" rx="57" ry="28" fill="none" stroke="#8e5324" stroke-width="5"/></g>
+         <!-- Kumkum -->
+         <g class="object" data-object="kumkum" role="button" tabindex="0" aria-label="कुंकू">
+          <ellipse cx="235" cy="308" rx="54" ry="30" fill="url(#bowl)" stroke="#ffdda2" stroke-width="4"/><ellipse cx="235" cy="303" rx="44" ry="21" fill="#9a1e32"/><path d="M193 303 Q235 278 276 303 Q236 323 193 303Z" fill="#c62f4d"/><ellipse cx="235" cy="304" rx="54" ry="29" fill="none" stroke="#8e5324" stroke-width="5"/></g>
+         <!-- Akshata -->
+         <g class="object" data-object="akshata" role="button" tabindex="0" aria-label="अक्षता">
+          <ellipse cx="318" cy="275" rx="55" ry="28" fill="url(#bowl)" stroke="#ffdda2" stroke-width="4"/><ellipse cx="318" cy="271" rx="45" ry="21" fill="#f2d9a3"/>
+          <g fill="#fffbee" stroke="#bba879" stroke-width=".8"><ellipse cx="297" cy="267" rx="9" ry="3" transform="rotate(-30 297 267)"/><ellipse cx="315" cy="261" rx="9" ry="3" transform="rotate(20 315 261)"/><ellipse cx="331" cy="263" rx="9" ry="3" transform="rotate(-20 331 263)"/><ellipse cx="343" cy="273" rx="9" ry="3" transform="rotate(30 343 273)"/><ellipse cx="306" cy="279" rx="9" ry="3" transform="rotate(33 306 279)"/><ellipse cx="324" cy="280" rx="9" ry="3" transform="rotate(-20 324 280)"/><ellipse cx="282" cy="276" rx="8" ry="3" transform="rotate(16 282 276)"/><ellipse cx="333" cy="272" rx="8" ry="3" transform="rotate(-45 333 272)"/><ellipse cx="307" cy="257" rx="8" ry="3" transform="rotate(64 307 257)"/><ellipse cx="321" cy="270" rx="9" ry="3" transform="rotate(73 321 270)"/></g>
+          <ellipse cx="318" cy="275" rx="55" ry="28" fill="none" stroke="#8e5324" stroke-width="4"/>
+         </g>
+         <!-- Gold ring -->
+         <g class="object" data-object="ring" role="button" tabindex="0" aria-label="सोन्याची अंगठी">
+          <ellipse cx="413" cy="288" rx="32" ry="24" transform="rotate(-29 413 288)" fill="none" stroke="#a25c1e" stroke-width="13"/><ellipse cx="413" cy="286" rx="32" ry="24" transform="rotate(-29 413 286)" fill="none" stroke="#ffe69a" stroke-width="7"/><ellipse cx="413" cy="286" rx="31" ry="23" transform="rotate(-29 413 286)" fill="none" stroke="#fff7c3" stroke-width="2"/>
+          <path d="M433 256 L441 248 L450 255 L441 264Z" fill="#fff7bc" stroke="#fff1cf" stroke-width="2"/>
+         </g>
+         <!-- Betel nut -->
+         <g class="object" data-object="supari" role="button" tabindex="0" aria-label="सुपारी">
+          <ellipse cx="486" cy="253" rx="32" ry="43" transform="rotate(39 486 253)" fill="#7c3d24" stroke="#e6a164" stroke-width="4"/><path d="M466 224 Q474 252 466 281 M484 216 Q491 254 482 293 M501 222 Q513 253 498 286" fill="none" stroke="#bb7950" stroke-width="4" opacity=".75" transform="rotate(20 485 252)"/>
+         </g>
+        </svg>
+      </div>
+      <div class="effects" id="effects"></div>
+    </div>
+    <div class="ritual-caption">प्रत्येक टप्प्यावर उजळलेली वस्तू निवडा • किंवा सूचनेतील बटण दाबा</div>
+   </section>
+   <aside class="instructions" aria-live="polite">
+     <div class="progress" id="progress" aria-label="औक्षण प्रगती"><span></span><span></span><span></span><span></span></div>
+     <section id="calibrationInstructions" hidden aria-labelledby="calibrationTitle">
+       <p class="step-label">फोटो जुळवणे · औक्षणापूर्वी</p>
+       <h2 class="step-title" id="calibrationTitle">तुझ्या फोटोवर योग्य जागा निवड</h2>
+       <p class="step-copy">फोटोतील चेहरा जिथे आहे तिथेच हळद-कुंकू आणि अक्षता दिसाव्यात म्हणून दोन ठिकाणी स्पर्श कर. आधी कपाळाचा मध्य, मग केसांचा माथ्यावरील शिखरभाग.</p>
+       <div class="calibration-controls">
+         <button class="secondary selected" id="chooseForehead" type="button">१ · कपाळावर खूण करा</button>
+         <button class="secondary" id="chooseCrown" type="button">२ · केसांच्या शिखरावर खूण करा</button>
+         <label for="photoZoom">फोटो मोठा / लहान <span id="zoomValue">1.0×</span></label>
+         <input id="photoZoom" type="range" min="1" max="1.8" step="0.05" value="1" />
+         <label for="photoShift">फोटो वर / खाली हलवा <span id="shiftValue">मधोमध</span></label>
+         <input id="photoShift" type="range" min="-110" max="110" step="5" value="0" />
+         <p id="calibrationStatus" class="hint" role="status">फोटोमध्ये जिथे कपाळ आहे तिथे टॅप कर.</p>
+         <button class="primary" id="confirmAlignment" type="button" disabled>✓ आता औक्षण सुरू करा</button>
+         <button class="secondary" id="backToPhoto" type="button">← दुसरा फोटो निवडा</button>
+       </div>
+     </section>
+     <div id="mainInstructions">
+       <p class="step-label" id="stepLabel">टप्पा १ / ४</p>
+       <h2 class="step-title" id="stepTitle">दिव्यांनी ओवाळणे</h2>
+       <p class="step-copy" id="stepCopy">ताम्हणातील दोन दिव्यांनी प्रथम एक संथ, सुंदर ओवाळणी करूया.</p>
+     </div>
+     <div id="completeInstructions" class="completion">
+       <div class="complete-symbol">✺</div>
+       <h2>औक्षण संपन्न झाले ✨</h2>
+       <p class="poem" id="poem">दृष्ट न लागो तुझ्या सुखाला,<br>बळ लाभो तुझ्या प्रत्येक पावलाला.<br>तेज, धैर्य, आनंद आणि शक्ती —<br>सदैव तुझ्या सोबतीला.</p>
+       <div class="fromline" id="fromline">तुझ्यासाठी मनापासून ❤️</div>
+     </div>
+     <nav class="step-map" id="stepMap" aria-label="औक्षणाचा क्रम">
+       <span data-stagenum="1">१. दिवे</span>
+       <span data-stagenum="2">२. हळद-कुंकू</span>
+       <span data-stagenum="3">३. अक्षता</span>
+       <span data-stagenum="4">४. सुपारी-अंगठी</span>
+     </nav>
+     <div class="divider"></div>
+     <div class="blessing" id="shortBlessing"><p>“तुझं तेज सदैव असंच उजळत राहो.”</p></div>
+     <div class="buttons">
+       <button class="primary" id="mainButton" type="button">🪔 दिव्यांनी एकदा ओवाळा</button>
+       <button class="secondary" id="auxButton" type="button" hidden>पुढचा टप्पा →</button>
+       <div class="step-illustration" id="tip" role="status">✧ दिव्यांना स्पर्श करा किंवा वरील बटण दाबा</div>
+     </div>
+   </aside>
+  </main>
+  <p class="note">हा पारंपरिक औक्षणाच्या भावनेतून तयार केलेला <strong>आभासी, प्रतीकात्मक सोहळा</strong> आहे. घराघरांनुसार औक्षणाच्या पद्धतीत बदल असू शकतो. खऱ्या विधीची जागा घेण्यापेक्षा प्रेम आणि शुभेच्छा पोहोचवणे हा याचा उद्देश आहे.</p>
+ </div>
+ <div class="modal" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareHeading">
+  <div class="modal-card">
+   <button class="close" id="closeShare" type="button" aria-label="बंद करा">×</button>
+   <div class="eyebrow">एखाद्या खास स्त्रीसाठी</div>
+   <h2 id="shareHeading">हा आशीर्वाद पुढे पाठवा</h2>
+   <p>आई, बहीण, मैत्रीण, मुलगी किंवा कोणतीही प्रिय स्त्री — तिचं नाव लिहून तिच्यासाठी खास औक्षण पाठवा.</p>
+   <label for="recipientName">जिचे औक्षण करायचे तिचे नाव (ऐच्छिक)</label><input maxlength="70" id="recipientName" type="text" placeholder="उदा. सायली" autocomplete="off" />
+   <label for="senderName">शुभेच्छा पाठवणाऱ्याचे नाव (ऐच्छिक)</label><input maxlength="70" id="senderName" type="text" placeholder="उदा. तुझी मैत्रीण" autocomplete="off" />
+   <div class="share-actions"><button id="shareButton" class="primary" type="button">शेअर करा ♡</button><button id="copyButton" class="secondary" type="button">लिंक कॉपी करा</button></div>
+   <div class="status" id="shareStatus" role="status"></div>
+   <p style="font-size:11px;opacity:.8;margin-bottom:0">लिंक पाठवण्यासाठी हे पान प्रथम वेबसाइटवर प्रकाशित करावे लागेल. डाउनलोड केलेली HTML फाइल स्वतःच्या फोनवर किंवा संगणकावर थेट चालते.</p>
+  </div>
+ </div>
+ <script>
+  (() => {
+   'use strict';
+   const $=s=>document.querySelector(s);
+   const params=new URLSearchParams(location.search);
+   const safeName=v => (v||'').replace(/[<>\u0000-\u001f]/g,'').trim().slice(0,70);
+   const recipient=safeName(params.get('to'));
+   const sender=safeName(params.get('from'));
+   const root=document.documentElement;
+   const figure=$('#figure'), thali=$('#thali'), scene=$('#scene'), effects=$('#effects');
+   const stepLabel=$('#stepLabel'), stepTitle=$('#stepTitle'), stepCopy=$('#stepCopy'), button=$('#mainButton'), tip=$('#tip'), aux=$('#auxButton');
+   const defaultPortrait=getComputedStyle(root).getPropertyValue('--portrait').trim();
+   let pendingPortrait='', step=1, busy=false, soundOn=false, audio=null;
+   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   const steps={
+    1:['टप्पा १ / ४ · प्रथम दिवे','दिव्यांनी ओवाळणे','ताम्हणातील दोन प्रज्वलित दिव्यांनी एकदा संथ गोलाकार ओवाळणी करूया.'],
+    2:['टप्पा २ / ४ · हळद-कुंकू','कपाळी हळद आणि कुंकू','प्रथम हळदीचा पिवळा ठिपका आणि मग कुंकवाचा लाल ठिपका कपाळावर अलगद लावूया.'],
+    3:['टप्पा ३ / ४ · अक्षता','मस्तकावर अक्षता','मूठभर नव्हे — थोड्याशा अक्षता अलगद तिच्या मस्तकाच्या शिखरावर पसरवूया.'],
+    4:['टप्पा ४ / ४ · सुपारी-अंगठी','सुपारी व अंगठीने ओवाळणे','सुपारी आणि सोन्याची अंगठी एकत्र ताम्हणाच्या डाव्या कडेवर अलगद टेकवा. तेथून त्या अर्ध-ओव्हल मार्गाने वर नेत उजव्या कडेवर टेकवा. मग उजवीकडून डावीकडे हाच प्रकार करा. अशा डावी-उजवी आणि उजवी-डावी अशा ३ जोड्या पूर्ण करूया.'],
+    5:['पूर्ण · शुभाशीर्वाद','औक्षण संपन्न','तुझ्या आयुष्यात प्रेम, आनंद, धैर्य आणि शक्ती नांदो.']
+   };
+   if(recipient) $('#heroTitle').textContent=recipient+'साठी प्रेमाने औक्षण';
+   if(sender) $('#heroSub').textContent=sender+'कडून — नकारात्मक नजरेपासून संरक्षणाची प्रार्थना आणि तुझ्यातील शक्तीला मनापासून वंदन.';
+   if(sender) $('#fromline').textContent=sender+'कडून तुला मनापासून आशीर्वाद ❤️';
+   $('#recipientName').value=recipient;$('#senderName').value=sender;
+   const markers={1:['lamps'],2:['haldi','kumkum'],3:['akshata'],4:['ring','supari']};
+   function setStep(next){
+    step=next;busy=false;const finished=step===5;
+    $('#mainInstructions').hidden=finished;$('#completeInstructions').classList.toggle('show',finished);
+    stepLabel.textContent=steps[step][0];stepTitle.textContent=steps[step][1];stepCopy.textContent=steps[step][2];
+    document.querySelectorAll('.progress span').forEach((n,i)=>n.classList.toggle('done',i<step-1||finished));
+    document.querySelectorAll('[data-stagenum]').forEach(n=>{const i=Number(n.dataset.stagenum);n.classList.toggle('active',i===step);n.classList.toggle('done',i<step)});
+    document.querySelectorAll('[data-object]').forEach(n=>n.classList.toggle('highlight',(markers[step]||[]).includes(n.dataset.object)));
+    $('#arcGuide').classList.toggle('visible',step===4);
+    if(step===4)updateArcGuide();
+    button.disabled=false;aux.hidden=true;
+    if(step===1){button.textContent='🪔 दिव्यांनी एकदा ओवाळा';tip.textContent='✧ दोन दिव्यांना स्पर्श करा किंवा बटण दाबा';}
+    if(step===2){button.textContent='हळद-कुंकू लावा →';tip.textContent='✧ प्रथम पिवळा, मग लाल ठिपका कपाळावर दिसेल';}
+    if(step===3){button.textContent='अक्षता अलगद पसरवा →';tip.textContent='✧ अक्षता तिच्या शिखरावर हळुवार पडतील';}
+    if(step===4){button.textContent='सुपारी-अंगठीच्या ३ जोड्या सुरू करा →';tip.textContent='✧ सुपारी-अंगठी डावे → उजवे, मग उजवे → डावे · असे ३दा';}
+    if(finished){button.textContent='हा आशीर्वाद शेअर करा ♡';aux.hidden=false;aux.textContent='पुन्हा औक्षण करा ↺';tip.textContent='✦ तुझ्या धैर्याला, सामर्थ्याला आणि आनंदाला वंदन';$('#shortBlessing').style.display='none';confetti();}
+    else $('#shortBlessing').style.display='block';
+   }
+   function sparkle(count=10, centerX=.5, centerY=.4){const rect=scene.getBoundingClientRect();for(let i=0;i<count;i++){const s=document.createElement('span');s.className='sparkle';s.textContent=i%3===0?'✧':'✦';const x=rect.width*(centerX+(Math.random()-.5)*.25),y=rect.height*(centerY+(Math.random()-.5)*.2);s.style.cssText=`left:${x}px;top:${y}px;font-size:${12+Math.random()*15}px;animation-delay:${Math.random()*.3}s`;effects.appendChild(s);setTimeout(()=>s.remove(),1500)}}
+   function confetti(){sparkle(28,.5,.4);setTimeout(()=>sparkle(20,.5,.55),550);chime()}
+   function chime(){if(!soundOn)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;audio=audio||new C();audio.resume();[660,990,1320].forEach((fq,i)=>{const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*.13;o.type='sine';o.frequency.setValueAtTime(fq,t);o.frequency.exponentialRampToValueAtTime(fq*.995,t+1);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.0001,t+1.1);g.gain.exponentialRampToValueAtTime(.1,t+.02);o.connect(g).connect(audio.destination);o.start(t);o.stop(t+1.12)})}catch(e){/* optional sound */}}
+   const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+   async function animateDiyas(){
+     busy=true;button.disabled=true;tip.textContent='🪔 दिव्यांनी हळुवार ओवाळणी सुरू आहे…';
+     const keyframes=[];const total=72;
+     for(let i=0;i<=total;i++){
+       const angle=2*Math.PI*i/total+Math.PI/2;
+       const dx=64*Math.cos(angle),dy=36*Math.sin(angle)-36;
+       keyframes.push({transform:`translate(-50%,-50%) translate(${dx.toFixed(2)}px,${dy.toFixed(2)}px) rotate(${(5*Math.sin(angle)).toFixed(2)}deg)`});
+     }
+     // First/last keyframe match: the thali returns gently to the exact starting point.
+     if(!reducedMotion){const anim=thali.animate(keyframes,{duration:2900,easing:'linear'});await anim.finished.catch(()=>{});}
+     else await wait(350);
+     sparkle(14,.5,.65);chime();setStep(2);
+   }
+   async function applyHaldiKumkum(){
+     busy=true;button.disabled=true;tip.textContent='🌼 आधी हळदीचा पिवळा ठिपका…';
+     await wait(reducedMotion?150:400);figure.classList.add('haldi-done');sparkle(5,.5,.28);
+     tip.textContent='♥ आता कुंकवाचा लाल ठिपका…';await wait(reducedMotion?150:800);
+     figure.classList.add('kumkum-done');sparkle(6,.5,.3);chime();await wait(reducedMotion?100:450);setStep(3);
+   }
+   async function applyAkshata(){
+     busy=true;button.disabled=true;tip.textContent='🌾 मस्तकावर अक्षता हळुवार पसरत आहेत…';
+     figure.classList.add('akshata-done');sparkle(9,.5,.19);chime();
+     await wait(reducedMotion?250:1750);setStep(4);
+   }
+   function arcGeometry(){
+     const w=scene.clientWidth,h=scene.clientHeight;
+     return {w,h,left:w/2-Math.min(thali.clientWidth*.45,186),right:w/2+Math.min(thali.clientWidth*.45,186),bottom:h*.76,high:Math.min(h*.20,92)};
+   }
+   function updateArcGuide(){
+     const g=arcGeometry();const svg=$('#arcSvg');svg.setAttribute('viewBox',`0 0 ${g.w} ${g.h}`);
+     $('#arcPath').setAttribute('d',`M${g.left} ${g.bottom} Q${g.w/2} ${g.bottom-g.high*2} ${g.right} ${g.bottom}`);
+     $('#arcLeft').setAttribute('cx',g.left);$('#arcLeft').setAttribute('cy',g.bottom);
+     $('#arcRight').setAttribute('cx',g.right);$('#arcRight').setAttribute('cy',g.bottom);
+     $('#arcLeftText').setAttribute('x',g.left-18);$('#arcLeftText').setAttribute('y',g.bottom+29);
+     $('#arcRightText').setAttribute('x',g.right-16);$('#arcRightText').setAttribute('y',g.bottom+29);
+   }
+   function arcPoint(g,fromSide,toSide,t){
+     const startX=fromSide==='left'?g.left:g.right,endX=toSide==='right'?g.right:g.left;
+     const cx=g.w/2, cy=g.bottom-g.high*2;
+     const omt=1-t;
+     return {x:omt*omt*startX + 2*omt*t*cx + t*t*endX,y:omt*omt*g.bottom + 2*omt*t*cy + t*t*g.bottom};
+   }
+   function setRitualObjects(x,y,fromSide,toSide,t,touch=false){
+     const el=$('#ringRitual');
+     const rotation=(fromSide==='left'?1:-1)*(touch?0:5*Math.sin(Math.PI*t));
+     // Center the small ring-and-supari pair over the arc end or traveling point.
+     el.style.left=`${(x-38).toFixed(2)}px`;
+     el.style.top=`${(y-28).toFixed(2)}px`;
+     el.style.opacity='1';
+     el.style.transform=`rotate(${rotation.toFixed(2)}deg)`;
+   }
+   async function animateArcPass(g,fromSide,toSide){
+     const start=arcPoint(g,fromSide,toSide,0);
+     tip.textContent=`✧ ${fromSide==='left'?'डाव्या':'उजव्या'} कडेला सुपारी-अंगठी अलगद टेकवा`;
+     setRitualObjects(start.x,start.y,fromSide,toSide,0,true);sparkle(3,start.x/g.w,start.y/g.h);await wait(reducedMotion?120:460);
+     tip.textContent='✧ सुपारी-अंगठी अर्ध-ओव्हल आकारात वर नेत फिरवा…';
+     const duration=reducedMotion?240:1400;
+     await new Promise(resolve=>{
+       const startTime=performance.now();
+       function frame(now){
+         const raw=Math.min(1,(now-startTime)/duration);
+         const eased=.5-.5*Math.cos(Math.PI*raw);
+         const p=arcPoint(g,fromSide,toSide,eased);
+         setRitualObjects(p.x,p.y,fromSide,toSide,eased,false);
+         if(raw<1) requestAnimationFrame(frame); else resolve();
+       }
+       requestAnimationFrame(frame);
+     });
+     const end=arcPoint(g,fromSide,toSide,1);
+     tip.textContent=`✧ ${toSide==='right'?'उजव्या':'डाव्या'} कडेला हलकेच स्पर्श`;
+     setRitualObjects(end.x,end.y,fromSide,toSide,1,true);sparkle(3,end.x/g.w,end.y/g.h);chime();await wait(reducedMotion?120:450);
+   }
+   async function rotateRingSupari(){
+     busy=true;button.disabled=true;const r=$('#ringRitual'),g=arcGeometry();
+     r.classList.add('play');
+     const passes=[['left','right'],['right','left'],['left','right'],['right','left'],['left','right'],['right','left']];
+     for(let i=0;i<passes.length;i++){
+       const [fromSide,toSide]=passes[i];
+       const pair=Math.floor(i/2)+1;
+       const dirText=fromSide==='left'?'डावीकडून उजवीकडे':'उजवीकडून डावीकडे';
+       button.textContent=`जोडी ${pair} / ३ · ${dirText}`;
+       await animateArcPass(g,fromSide,toSide);
+     }
+     r.style.opacity='0';r.classList.remove('play');
+     setStep(5);
+   }
+   function applyPortrait(value){root.style.setProperty('--portrait', value.startsWith('url(')?value:`url("${value}")`);}
+   let calibrating=false, activePlacement='forehead', foreheadPlaced=false, crownPlaced=false;
+   function setPlacementMode(mode){
+     activePlacement=mode;
+     $('#chooseForehead').classList.toggle('selected',mode==='forehead');
+     $('#chooseCrown').classList.toggle('selected',mode==='crown');
+     $('#placementPrompt').textContent=mode==='forehead'?'फोटोमध्ये कपाळाच्या मध्यभागी स्पर्श करा':'फोटोमध्ये जिथे अक्षता ठेवायच्या त्या शिखरावर स्पर्श करा';
+     $('#calibrationStatus').textContent=$('#placementPrompt').textContent;
+   }
+   function updatePhotoTransform(){
+     figure.style.setProperty('--photo-zoom',$('#photoZoom').value);
+     figure.style.setProperty('--photo-shift',$('#photoShift').value+'px');
+     $('#zoomValue').textContent=(+$('#photoZoom').value).toFixed(2)+'×';
+     $('#shiftValue').textContent=+$('#photoShift').value===0?'मधोमध':(+$('#photoShift').value<0?'वर ':'खाली ')+Math.abs(+$('#photoShift').value);
+     // Once the image moves, existing landmarks no longer align.
+     foreheadPlaced=crownPlaced=false;
+     $('#foreheadPin').classList.remove('placed');$('#crownPin').classList.remove('placed');
+     $('#confirmAlignment').disabled=true;
+     setPlacementMode('forehead');
+   }
+   function startCalibration(){
+     calibrating=true;foreheadPlaced=crownPlaced=false;
+     figure.classList.remove('haldi-done','kumkum-done','akshata-done');
+     $('#customize').hidden=true;$('#ceremony').hidden=false;
+     scene.classList.add('calibrating');
+     $('#calibrationInstructions').hidden=false;$('#mainInstructions').hidden=true;
+     $('#progress').hidden=true;$('#stepMap').hidden=true;$('#shortBlessing').hidden=true;
+     button.hidden=true;aux.hidden=true;tip.hidden=true;
+     $('#photoZoom').value='1';$('#photoShift').value='0';updatePhotoTransform();
+     $('#ceremony').scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'});
+   }
+   function endCalibration(){
+     calibrating=false;scene.classList.remove('calibrating');
+     $('#calibrationInstructions').hidden=true;$('#progress').hidden=false;
+     $('#stepMap').hidden=false;$('#shortBlessing').hidden=false;
+     button.hidden=false;tip.hidden=false;
+   }
+   function proceedToCeremony(personal=false){
+     if(personal){startCalibration();return;}
+     endCalibration();$('#customize').hidden=true;$('#ceremony').hidden=false;
+     $('#ceremony').classList.add('celebrated');setStep(1);
+     $('#ceremony').scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'});chime();
+   }
+   let photoReadSequence=0;
+   function clearPhotoPreview(){
+     pendingPortrait='';
+     $('#chosenPreview').hidden=true;
+     $('#chosenPreview').removeAttribute('src');
+     $('#photoPreview').classList.remove('has-photo');
+     $('#continueWithPhoto').disabled=true;
+   }
+   async function readPortrait(file){
+     if(!file)return;
+     const sequence=++photoReadSequence;
+     clearPhotoPreview();
+     const status=$('#uploadStatus');
+     if(file.size>40*1024*1024){status.textContent='फोटो खूप मोठा आहे (४० MB पेक्षा जास्त). कृपया लहान फोटो निवडा.';return;}
+     status.textContent='फोटो तयार करत आहोत…';
+     const objectUrl=URL.createObjectURL(file);
+     const img=new Image();
+     const fail=()=>{if(sequence===photoReadSequence){status.textContent='हा फोटो उघडता आला नाही. कृपया JPEG, PNG किंवा WebP फोटो वापरून पुन्हा प्रयत्न करा.';clearPhotoPreview();}URL.revokeObjectURL(objectUrl);};
+     img.onerror=fail;
+     img.onload=()=>{
+       URL.revokeObjectURL(objectUrl);
+       if(sequence!==photoReadSequence)return;
+       try{
+         if(!img.naturalWidth||!img.naturalHeight)throw new Error('Invalid image');
+         // Compress large camera photos to a browser-safe JPEG, without any network upload.
+         const maximum=1500;
+         const scale=Math.min(1,maximum/Math.max(img.naturalWidth,img.naturalHeight));
+         const canvas=document.createElement('canvas');
+         canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));
+         canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
+         const ctx=canvas.getContext('2d');
+         if(!ctx)throw new Error('Canvas unavailable');
+         ctx.fillStyle='#472139';ctx.fillRect(0,0,canvas.width,canvas.height);
+         ctx.drawImage(img,0,0,canvas.width,canvas.height);
+         const url=canvas.toDataURL('image/jpeg',.88);
+         if(!url.startsWith('data:image/jpeg;base64,'))throw new Error('Conversion failed');
+         pendingPortrait=url;
+         $('#chosenPreview').src=url;
+         $('#chosenPreview').hidden=false;
+         $('#photoPreview').classList.add('has-photo');
+         applyPortrait(url);
+         $('#continueWithPhoto').disabled=false;
+         status.textContent='✓ फोटो दिसत आहे! आता “हा फोटो वापरा” दाबून औक्षण सुरू करा.';
+       }catch(e){status.textContent='फोटोवर प्रक्रिया करता आली नाही. कृपया JPEG किंवा PNG फोटो वापरा.';clearPhotoPreview();}
+     };
+     img.src=objectUrl;
+   }
+   figure.addEventListener('pointerdown',e=>{
+     if(!calibrating)return;
+     e.preventDefault();
+     const rect=figure.getBoundingClientRect();
+     const x=Math.max(9,Math.min(91,(e.clientX-rect.left)/rect.width*100));
+     const y=Math.max(4,Math.min(91,(e.clientY-rect.top)/rect.height*100));
+     if(activePlacement==='forehead'){
+       figure.style.setProperty('--forehead-x',x.toFixed(2)+'%');
+       figure.style.setProperty('--forehead-y',y.toFixed(2)+'%');
+       const mark=$('#foreheadPin');mark.style.left=x+'%';mark.style.top=y+'%';mark.classList.add('placed');
+       foreheadPlaced=true;setPlacementMode('crown');
+     }else{
+       figure.style.setProperty('--crown-x',x.toFixed(2)+'%');
+       figure.style.setProperty('--crown-y',y.toFixed(2)+'%');
+       const mark=$('#crownPin');mark.style.left=x+'%';mark.style.top=y+'%';mark.classList.add('placed');
+       crownPlaced=true;
+     }
+     $('#confirmAlignment').disabled=!(foreheadPlaced&&crownPlaced);
+     if(foreheadPlaced&&crownPlaced){$('#calibrationStatus').textContent='✓ दोन्ही जागा निवडल्या. आता औक्षण सुरू करू शकतेस; हवे असल्यास खूण पुन्हा निवड.';$('#placementPrompt').textContent='कपाळ व शिखर निश्चित झाले ✓';}
+   });
+   $('#chooseForehead').addEventListener('click',()=>setPlacementMode('forehead'));
+   $('#chooseCrown').addEventListener('click',()=>setPlacementMode('crown'));
+   $('#photoZoom').addEventListener('input',updatePhotoTransform);
+   $('#photoShift').addEventListener('input',updatePhotoTransform);
+   $('#confirmAlignment').addEventListener('click',()=>{if(!foreheadPlaced||!crownPlaced)return;endCalibration();setStep(1);chime()});
+   $('#backToPhoto').addEventListener('click',()=>{endCalibration();$('#ceremony').hidden=true;$('#customize').hidden=false;$('#customize').scrollIntoView({behavior:'smooth',block:'start'})});
+   async function advanceItem(){if(busy)return;if(step===1)return animateDiyas();if(step===2)return applyHaldiKumkum();if(step===3)return applyAkshata();if(step===4)return rotateRingSupari();if(step===5)return showShare()}
+   button.addEventListener('click',advanceItem);
+   aux.addEventListener('click',()=>{figure.classList.remove('haldi-done','kumkum-done','akshata-done');$('#welcome').hidden=false;$('#customize').hidden=true;$('#ceremony').hidden=true;endCalibration();setStep(1);$('#welcome').scrollIntoView({behavior:'smooth'});});
+   document.querySelectorAll('[data-object]').forEach(el=>{
+      const act=()=>{const o=el.dataset.object;if(!$('#welcome').hidden||calibrating)return;
+        if((markers[step]||[]).includes(o))advanceItem();
+        else if(step!==5&&!busy)tip.textContent='✧ कृपया आधी या टप्प्याची उजळलेली वस्तू निवडा';
+      };
+      el.addEventListener('click',act);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}});
+   });
+   $('#acceptBlessing').addEventListener('click',()=>{$('#welcome').hidden=true;$('#customize').hidden=false;$('#customize').scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'});chime();});
+   window.addEventListener('resize',()=>{if(step===4)updateArcGuide()});
+   $('#cameraInput').addEventListener('change',e=>{readPortrait(e.target.files&&e.target.files[0]);e.target.value='';});
+   $('#uploadInput').addEventListener('change',e=>{readPortrait(e.target.files&&e.target.files[0]);e.target.value='';});
+   $('#continueWithPhoto').addEventListener('click',()=>{if(pendingPortrait)proceedToCeremony(true);});
+   $('#skipPhotoBtn').addEventListener('click',()=>{++photoReadSequence;clearPhotoPreview();root.style.setProperty('--portrait',defaultPortrait);figure.style.removeProperty('--forehead-x');figure.style.removeProperty('--forehead-y');figure.style.removeProperty('--crown-x');figure.style.removeProperty('--crown-y');figure.style.removeProperty('--photo-zoom');figure.style.removeProperty('--photo-shift');$('#uploadStatus').textContent='डिफॉल्ट प्रतिमेसह औक्षण सुरू होत आहे.';proceedToCeremony();});
+   $('#soundBtn').addEventListener('click',()=>{soundOn=!soundOn;$('#soundLabel').textContent=soundOn?'ध्वनी सुरू':'ध्वनी बंद';if(soundOn)chime()});
+   const modal=$('#shareModal');function showShare(){modal.classList.add('open');$('#shareStatus').textContent='';$('#recipientName').focus()}
+   function closeShare(){modal.classList.remove('open')}
+   $('#openShare').addEventListener('click',showShare);$('#closeShare').addEventListener('click',closeShare);modal.addEventListener('click',e=>{if(e.target===modal)closeShare()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeShare()});
+   function makeShare(){const to=safeName($('#recipientName').value),from=safeName($('#senderName').value),p=new URL(location.href);p.search='';p.hash='';if(to)p.searchParams.set('to',to);if(from)p.searchParams.set('from',from);return {url:p.href,to,from}}
+   function shareText(o){return `${o.to?o.to+', ':''}तुझ्यासाठी प्रेमाने औक्षण 🪔✨\nदृष्ट न लागो तुझ्या सुखाला. तुझ्यातील शक्ती, धैर्य आणि तेज सदैव उजळत राहो! ${o.from?'— '+o.from:''}\n${location.protocol==='file:'?'':o.url}`.trim()}
+   async function copyText(s){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(s);return}const ta=document.createElement('textarea');ta.value=s;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const result=document.execCommand('copy');ta.remove();if(!result)throw Error('copy failure')}
+   $('#copyButton').addEventListener('click',async()=>{const o=makeShare();try{await copyText(location.protocol==='file:'?shareText(o):o.url);$('#shareStatus').textContent=location.protocol==='file:'?'शुभेच्छांचा संदेश कॉपी झाला. लिंकसाठी वेबसाइट प्रकाशित करा.':'वैयक्तिक लिंक कॉपी झाली!';}catch(e){$('#shareStatus').textContent='कॉपी करता आली नाही. ब्राउझरमधून लिंक कॉपी करा.'}});
+   $('#shareButton').addEventListener('click',async()=>{const o=makeShare();if(navigator.share){try{await navigator.share({title:'तुझ्यासाठी प्रेमाने औक्षण',text:location.protocol==='file:'?shareText(o):shareText({...o,url:''}),...(location.protocol==='file:'?{}:{url:o.url})});$('#shareStatus').textContent='शेअर पर्याय उघडला.';return}catch(e){if(e.name==='AbortError')return}}
+    try{await copyText(shareText(o));$('#shareStatus').textContent='शुभेच्छांचा संदेश कॉपी झाला — आता पाठवू शकता.'}catch(e){$('#shareStatus').textContent='तुमच्या ब्राउझरमध्ये शेअरिंग उपलब्ध नाही.'}
+   });
+   setStep(1);
+  })();
+ </script>
+</body>
+</html>
