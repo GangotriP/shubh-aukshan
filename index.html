@@ -137,6 +137,23 @@
     }
     @media(max-width:760px){.customize{margin:8px 12px 24px;padding:13px;display:flex;flex-direction:column-reverse;gap:10px;border-radius:21px}.photo-preview{min-height:220px}.customize-copy{padding:10px 8px 6px}.customize-copy h2{font-size:27px}}
     @media(max-width:390px){.figure{width:230px}.scene{height:405px}.welcome-art{min-height:140px;max-height:140px}.welcome-message{padding:10px 7px}}
+    /* Uploaded portraits need their own vertical composition: leave the face visible above the thali. */
+    .scene.personalized{height:clamp(520px,55vw,600px);min-height:520px}
+    .scene.personalized .figure{top:5%;width:min(54%,280px);min-width:0}
+    .scene.personalized .figure-photo{background-size:contain;background-repeat:no-repeat;background-position:center}
+    .scene.personalized .thali{top:77%;width:min(76%,375px)}
+    /* Show enough of the thali during alignment to preview final face coverage. */
+    .scene.personalized.calibrating .thali{opacity:.52}
+    @media(max-width:760px){
+      .scene.personalized{height:565px;min-height:565px}
+      .scene.personalized .figure{top:5%;width:min(78%,270px)}
+      .scene.personalized .thali{top:77%;width:min(80%,340px)}
+    }
+    @media(max-width:390px){
+      .scene.personalized{height:548px;min-height:548px}
+      .scene.personalized .figure{top:5%;width:min(76%,255px)}
+      .scene.personalized .thali{top:77%;width:min(82%,325px)}
+    }
     @media(prefers-reduced-motion:reduce){.figure.akshata-done .rice-grain{animation:none;opacity:1;transform:rotate(var(--r))}}
 
   </style>
@@ -291,7 +308,7 @@
      <section id="calibrationInstructions" hidden aria-labelledby="calibrationTitle">
        <p class="step-label">फोटो जुळवणे · औक्षणापूर्वी</p>
        <h2 class="step-title" id="calibrationTitle">तुझ्या फोटोवर योग्य जागा निवड</h2>
-       <p class="step-copy">फोटोतील चेहरा जिथे आहे तिथेच हळद-कुंकू आणि अक्षता दिसाव्यात म्हणून दोन ठिकाणी स्पर्श कर. आधी कपाळाचा मध्य, मग केसांचा माथ्यावरील शिखरभाग.</p>
+       <p class="step-copy">पूर्ण चेहरा ताम्हणाच्या वर दिसतोय याची खात्री कर. गरज पडल्यास फोटो हलव किंवा झूम बदल. मग आधी कपाळाचा मध्य, आणि नंतर केसांचे शिखर अशा दोन ठिकाणी स्पर्श कर.</p>
        <div class="calibration-controls">
          <button class="secondary selected" id="chooseForehead" type="button">१ · कपाळावर खूण करा</button>
          <button class="secondary" id="chooseCrown" type="button">२ · केसांच्या शिखरावर खूण करा</button>
@@ -418,7 +435,11 @@
    }
    function arcGeometry(){
      const w=scene.clientWidth,h=scene.clientHeight;
-     return {w,h,left:w/2-Math.min(thali.clientWidth*.45,186),right:w/2+Math.min(thali.clientWidth*.45,186),bottom:h*.76,high:Math.min(h*.20,92)};
+     // Derive the semicircle endpoints from the actual thali position, which differs for personal photos.
+     const sceneRect=scene.getBoundingClientRect(),thaliRect=thali.getBoundingClientRect();
+     const centerY=thaliRect.top+thaliRect.height*.5-sceneRect.top;
+     const extent=Math.min(thali.clientWidth*.45,186);
+     return {w,h,left:w/2-extent,right:w/2+extent,bottom:centerY,high:Math.min(h*.14,78)};
    }
    function updateArcGuide(){
      const g=arcGeometry();const svg=$('#arcSvg');svg.setAttribute('viewBox',`0 0 ${g.w} ${g.h}`);
@@ -499,6 +520,7 @@
      setPlacementMode('forehead');
    }
    function startCalibration(){
+     scene.classList.add('personalized');
      calibrating=true;foreheadPlaced=crownPlaced=false;
      figure.classList.remove('haldi-done','kumkum-done','akshata-done');
      $('#customize').hidden=true;$('#ceremony').hidden=false;
@@ -517,6 +539,7 @@
    }
    function proceedToCeremony(personal=false){
      if(personal){startCalibration();return;}
+     scene.classList.remove('personalized');
      endCalibration();$('#customize').hidden=true;$('#ceremony').hidden=false;
      $('#ceremony').classList.add('celebrated');setStep(1);
      $('#ceremony').scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'});chime();

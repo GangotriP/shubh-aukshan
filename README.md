@@ -16,7 +16,7 @@ The rice grains land on the chosen crown/hair area, not on the face. The कु�
 
 Personal images are selected and processed **inside the recipient's browser** using browser APIs; the website does not upload them to a server, use a backend, or save them to GitHub. Images are only held in the open page; refreshing the page clears them. A GitHub Pages website link can be shared publicly, but the uploaded photos themselves are never part of that link.
 
-To support different selfie framing, this version intentionally uses **manual, two-point positioning** rather than claiming to recognize faces automatically. Recipients can move or zoom their image and mark the two points themselves.
+To support different selfie framing, this version intentionally uses **manual, two-point positioning** rather than claiming to recognize faces automatically. Recipients can move or zoom their image and mark the two points themselves. Uploaded photos also use a taller ceremony stage and a lower, smaller thali so the full face stays visible. The ritual arc is positioned relative to the actual thali.
 
 ## Publish on GitHub Pages
 
@@ -26,4 +26,4 @@ To support different selfie framing, this version intentionally uses **manual, t
 4. Set **Source: Deploy from a branch**, **Branch: main**, **Folder: /(root)**, and save.
 5. Open the GitHub Pages URL shown after deployment.
 
-This version is **not deployed**. You can also open `index.html` directly in a modern browser for local testing. Camera permission is browser/device-dependent; if the camera picker is unavailable, choose a picture from the photo library.
+This updated layout is **not deployed**. Replace the repository root `index.html` to publish the updated layout under the existing GitHub Pages link. You can also open `index.html` directly in a modern browser for local testing. Camera permission is browser/device-dependent; if the camera picker is unavailable, choose a picture from the photo library.
